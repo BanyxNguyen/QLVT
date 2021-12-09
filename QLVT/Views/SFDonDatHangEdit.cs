@@ -1,4 +1,5 @@
 ﻿using QLVT.DTO;
+using QLVT.Extensions;
 using QLVT.Models;
 using System;
 using System.Collections.Generic;
@@ -130,11 +131,7 @@ namespace QLVT.Views
         {
             SFTaoHangHoaTrenPhieu f = new SFTaoHangHoaTrenPhieu();
             f.ShowDialog();
-            if (!f.isSubmit)
-            {
-                f.Close();
-                return;
-            }
+            if (!f.isSubmit) { f.Close(); return; }
             //MessageBox.Show(f.SL + "@@" + f.DonGia + "@@" + f.Idhh.ToString(), "", MessageBoxButtons.OK);
             try
             {
@@ -147,14 +144,14 @@ namespace QLVT.Views
                 });
                 var res = _Context.SaveChanges();
                 if (res > 0) LoadData();
-                else throw new Exception("Error");
+                f.Close();
             }
             catch (Exception)
             {
+                _Context.ResetState();
+                f.Close();
                 MessageBox.Show("Them Chi Tiet Don Hang that bai!");
             }
-
-            f.Close();
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {

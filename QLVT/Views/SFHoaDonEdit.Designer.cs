@@ -29,6 +29,7 @@ namespace QLVT.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SFHoaDonEdit));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnControl = new System.Windows.Forms.Panel();
@@ -39,9 +40,15 @@ namespace QLVT.Views
             this.btnDelete = new System.Windows.Forms.Button();
             this.lbFormName = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.cTHoaDonDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenhhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.pnControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -135,14 +142,60 @@ namespace QLVT.Views
             // 
             // dgvData
             // 
+            this.dgvData.AutoGenerateColumns = false;
+            this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.tenhhDataGridViewTextBoxColumn,
+            this.dongiaDataGridViewTextBoxColumn,
+            this.slDataGridViewTextBoxColumn});
+            this.dgvData.DataSource = this.cTHoaDonDTOBindingSource;
             this.dgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvData.Location = new System.Drawing.Point(0, 140);
             this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersWidth = 51;
             this.dgvData.RowTemplate.Height = 24;
+            this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(1058, 379);
             this.dgvData.TabIndex = 41;
+            // 
+            // cTHoaDonDTOBindingSource
+            // 
+            this.cTHoaDonDTOBindingSource.DataSource = typeof(QLVT.DTO.CTHoaDonDTO);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Idhh";
+            this.Column1.HeaderText = "Idhh";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // tenhhDataGridViewTextBoxColumn
+            // 
+            this.tenhhDataGridViewTextBoxColumn.DataPropertyName = "Tenhh";
+            this.tenhhDataGridViewTextBoxColumn.HeaderText = "Tenhh";
+            this.tenhhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenhhDataGridViewTextBoxColumn.Name = "tenhhDataGridViewTextBoxColumn";
+            this.tenhhDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dongiaDataGridViewTextBoxColumn
+            // 
+            this.dongiaDataGridViewTextBoxColumn.DataPropertyName = "Dongia";
+            this.dongiaDataGridViewTextBoxColumn.HeaderText = "Dongia";
+            this.dongiaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dongiaDataGridViewTextBoxColumn.Name = "dongiaDataGridViewTextBoxColumn";
+            this.dongiaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // slDataGridViewTextBoxColumn
+            // 
+            this.slDataGridViewTextBoxColumn.DataPropertyName = "Sl";
+            this.slDataGridViewTextBoxColumn.HeaderText = "Sl";
+            this.slDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.slDataGridViewTextBoxColumn.Name = "slDataGridViewTextBoxColumn";
+            this.slDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // SFHoaDonEdit
             // 
@@ -162,6 +215,7 @@ namespace QLVT.Views
             this.pnControl.ResumeLayout(false);
             this.pnControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,5 +231,10 @@ namespace QLVT.Views
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lbFormName;
         private System.Windows.Forms.DataGridView dgvData;
+        private System.Windows.Forms.BindingSource cTHoaDonDTOBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenhhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dongiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slDataGridViewTextBoxColumn;
     }
 }

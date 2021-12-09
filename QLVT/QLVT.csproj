@@ -421,6 +421,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\QLVT.DTO.CTDonDatHangDTO.datasource" />
+    <None Include="Properties\DataSources\QLVT.DTO.CTHoaDonDTO.datasource" />
     <None Include="Properties\DataSources\QLVT.DTO.CTPhieuNhapDTO.datasource" />
     <None Include="Properties\DataSources\QLVT.DTO.DonDatHangDTO.datasource" />
     <None Include="Properties\DataSources\QLVT.DTO.HoaDonDTO.datasource" />

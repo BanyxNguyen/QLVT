@@ -52,9 +52,17 @@ namespace QLVT.Views
             LoadData();
             MessageBox.Show("Cap Nhat Thanh Cong!");
         }
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            if (dgvData.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Ban chua chon dong du lieu!", "Thong tin", MessageBoxButtons.OK);
+                return;
+            }
+            var cell = dgvData.SelectedRows[0].DataBoundItem as HoaDonDTO;
+            var res = _Context.Hoadon.Where(x => x.Id == cell.Id).FirstOrDefault();
+            SFHoaDonEdit f = new SFHoaDonEdit(res);
+            f.ShowDialog();
         }
     }
 }
